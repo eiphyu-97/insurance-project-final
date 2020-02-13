@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: talent_student_registration_assignment
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: ei phyu
+Implementation-Vendor-Id: com.motor.insurance
+Build-Jdk: 1.8.0_181
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/motor_insurance
+Created-By: Maven Integration for Eclipse
+

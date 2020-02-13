@@ -1,0 +1,573 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<meta charset="utf-8"></meta>
+	<title>Proposal Form</title>
+	<link rel="shortcut icon" href="http://finsurance.com.ng/insurance/assets/img/test.png"></link>
+	<link href="http://finsurance.com.ng/insurance/assets/css/bootstrap.css" rel="stylesheet" type="text/css" />
+	<link href="http://finsurance.com.ng/insurance/assets/css/style.css" rel="stylesheet" type="text/css" />
+	<script src="http://finsurance.com.ng/insurance/assets/js/jquery-2.0.3.min.js"></script>
+</h:head>
+<h:body class="main_body">
+	<div class="colorBox" style="margin-top: -10px">
+		<div class="container default-top">
+			<div class="row">
+				<div class="col-xs-12" style="margin: 10px 0px">
+					<div class="panel panel-primary">
+						<div class="panel-body">
+							<div class="row">
+								<div class="col-xs-12">
+								
+					<!-- 		Begin of Owner Details -->
+									<div style="overflow: auto">
+										<h3 style="font-size: 18px; font-weight: bold">Policy Owner Details</h3>
+										<hr style="margin: 0px;"></hr>
+									</div>
+									<h:form class="form has-validation-callback" onsubmit="return validateForm()" role="form" method="post">
+										<div class="col-sm-3">
+											<div style="overflow: auto; width: 100%; margin-top: 10px;">
+												<h:outputLabel for="name">Name</h:outputLabel>
+												<span class="text-danger">*</span><span
+													class="text-muted small"></span>
+											</div>
+											<p:inputText id="name" label="Name" class="form-control" value=" " required="true" requiredMessage="Name is Required!" validatorMessage="Name length must be 3~12!">
+												<f:validateLength minimum="3" maximum="20" />
+												<f:validateRegex pattern="^[a-zA-Z]+$" />
+											</p:inputText>
+											&nbsp;
+											<p:message for="name" style="color: red;"></p:message>
+										</div>
+
+
+										<div class="col-sm-3">
+											<div style="overflow: auto; width: 100%; margin-top: 10px;">
+												<h:outputLabel for="nrc">NRC No</h:outputLabel>
+												<span class="text-danger">*</span><span
+													class="text-muted small"></span>
+											</div>
+											<p:inputText id="nrc" label="nrc" class="form-control"
+												required="true" value=" " requiredMessage="NRC is Required!" validatorMessage="Invalid NRC">
+												<f:validateLength minimum="3" maximum="20" />
+												<f:validateRegex pattern="^[a-zA-Z]+$" />
+											</p:inputText>
+											&nbsp;
+											<p:message for="nrc" style="color: red;"></p:message>
+										</div>
+
+
+										<div class="col-sm-3">
+											<div style="overflow: auto; width: 100%; margin-top: 10px;">
+												<h:outputLabel for="dob">Date of Birth</h:outputLabel>
+												<span class="text-danger">*</span><span class="text-muted small"></span>
+											</div>
+											<p:inputText id="dob" label="Date Of Birth" class="form-control" data-validation="required" requiredMessage="Date is Required!"
+												validatorMessage="Invalid Date" required="true" value=" " />
+										</div>
+
+
+										<div class="col-sm-3">
+											<div style="overflow: auto; width: 100%; margin-top: 10px;">
+												<h:outputLabel for="phoneNo">Phone Number</h:outputLabel>
+												<span class="text-danger">*</span><span	class="text-muted small"></span>
+											</div>
+											<p:inputText id="phoneNo" label="Phone No" class="form-control" data-validation="required" required="true" value=" " requiredMessage="Phno is Required!"
+												validatorMessage="Invalid Phone">
+												<f:validateLength minimum="3" maximum="20" />
+												<f:validateRegex pattern="^[a-zA-Z]+$" />
+											</p:inputText>
+											&nbsp;
+											<p:message for="phoneNo" style="color: red;"></p:message>
+										</div>
+
+
+										<div class="col-sm-3">
+											<div style="overflow: auto; width: 100%; margin-top: 10px;">
+												<h:outputLabel for="address">Address</h:outputLabel>
+												<span class="text-danger">*</span><span class="text-muted small"></span>
+											</div>
+											<p:inputText id="address" label="Address" class="form-control" data-validation="required" required="true" value=" " requiredMessage="Address is Required!"
+												validatorMessage="Invalid Address">
+												<f:validateLength minimum="3" maximum="20" />
+												<f:validateRegex pattern="^[a-zA-Z]+$" />
+											</p:inputText>
+											&nbsp;
+											<p:message for="address" style="color: red;"></p:message>
+										</div>
+
+
+										<div class="col-sm-3">
+											<div style="overflow: auto; width: 100%; margin-top: 10px;">
+												<h:outputLabel for="occupation">Occupation</h:outputLabel>
+												<span class="text-danger">*</span><span class="text-muted small"></span>
+											</div>
+											<p:inputText id="occupation" label="Occupation" class="form-control" data-validation="required" required="true" value=" " requiredMessage="Occupation is Required!"
+												validatorMessage="Invalid ">
+												<f:validateLength minimum="3" maximum="50" />
+												<f:validateRegex pattern="^[a-zA-Z]+$" />
+											</p:inputText>
+											&nbsp;
+											<p:message for="occupation" style="color: red;"></p:message>
+										</div>
+
+
+										<div class="col-sm-3">
+											<div style="overflow: auto; width: 100%; margin-top: 10px;">
+												<h:outputLabel for="gender">Gender</h:outputLabel>
+												<span class="text-danger">*</span><span	class="text-muted small"></span>
+											</div>
+											<p:selectOneRadio id="gender" value=" " unselectable="true">
+												<f:selectItem itemLabel="Male" itemValue="Male" />
+												<f:selectItem itemLabel="Female" itemValue="Female" />
+											</p:selectOneRadio>
+										</div>
+
+										<div>&nbsp;</div>
+										<div class="col-sm-3">
+											<div style="overflow: auto; width: 100%; margin-top: 10px;">
+												<h:outputLabel for="startDate">Start Date</h:outputLabel>
+												<span class="text-danger">*</span><span class="text-muted small"></span>
+											</div>
+											<p:inputText id="startDate" label="Start Date" class="form-control" data-validation="required" requiredMessage="Date is Required!"
+												validatorMessage="Invalid Date" required="true" value=" " />
+										</div>
+
+
+										<div class="col-sm-3">
+											<div style="overflow: auto; width: 100%; margin-top: 10px;">
+												<h:outputLabel for="sumInsurance">Sum Insurance</h:outputLabel>
+												<span class="text-danger">*</span><span class="text-muted small"></span>
+											</div>
+											<p:inputText id="sumInsurance" label="Sum Insurance" class="form-control" data-validation="required" requiredMessage="Sum Inssure is Required!"
+												validatorMessage="Must be number" required="true" value=" ">
+												<f:validateLength minimum="3" maximum="20" />
+												<f:validateRegex pattern="^[a-zA-Z]+$" />
+											</p:inputText>
+											&nbsp;
+											<p:message for="sumInsurance" style="color: red;"></p:message>
+										</div>
+
+										<div class="col-sm-3">
+											<div style="overflow: auto; width: 100%; margin-top: 10px;">
+												<h:outputLabel for="premium">Premium</h:outputLabel>
+												<span class="text-danger">*</span><span class="text-muted small"></span>
+											</div>
+											<p:inputText id="premium" label="Premium" class="form-control" data-validation="required" requiredMessage="Premium is Required!"
+												validatorMessage="Must be number" required="true" value=" ">
+												<f:validateLength minimum="3" maximum="20" />
+												<f:validateRegex pattern="^[a-zA-Z]+$" />
+											</p:inputText>
+											&nbsp;
+											<p:message for="premium" style="color: red;"></p:message>
+										</div>
+
+
+										<div class="col-sm-3">
+											<div style="overflow: auto; width: 100%;">
+												<h:outputLabel for="coverageType">Coverage Type</h:outputLabel>
+												<span class="text-danger">*</span><span class="text-muted small"></span>
+											</div>
+											<h:selectOneMenu id="coverageType" value=""
+												style="width: 100%; margin-top: 10px;" class="form-control"
+												requiredMessage="coverageType is Required!">
+												<f:selectItem itemValue=" " itemLabel="" />
+												<f:selectItem itemValue="Third Party"
+													itemLabel="Thrid Party" />
+												<f:selectItem itemValue="Comprehensive"
+													itemLabel="Comprehensive" />
+											</h:selectOneMenu>
+										</div>
+
+										<div class="col-sm-3">
+											<div style="overflow: auto; width: 100%; margin-top: 10px;">
+												<h:outputLabel for="paymethod">How To Pay</h:outputLabel>
+												<span class="text-danger">*</span><span class="text-muted small"></span>
+											</div>
+											<h:selectOneMenu id="paymethod" value="" style="width: 100%;" class="form-control" requiredMessage="Payment Method is Required!">
+												<f:selectItem itemLabel=" " itemValue="" />
+												<f:selectItem itemLabel="3 months" itemValue="3 months" />
+												<f:selectItem itemLabel="6 months" itemValue="6 months" />
+												<f:selectItem itemLabel="1 years" itemValue="1 years" />
+											</h:selectOneMenu>
+										</div>
+                                <!-- 		Begin of Owner Details -->
+										
+										
+								<!--  		Begin of Vehicle Detail -->
+										<div class="col-sm-12">
+											<div style="overflow: auto; width: 100%; margin-top: 10px;">
+												<h3 style="font-size: 18px; font-weight: bold">Vehicle Details</h3>
+												<hr style="margin: 0px;"></hr>
+											</div>
+										</div>
+
+										<div class="col-sm-3">
+											<div style="overflow: auto; width: 100%; margin-top: 10px;">
+												<h:outputLabel for="model">Model</h:outputLabel>
+												<span class="text-danger">*</span><span class="text-muted small"></span>
+											</div>
+											<p:inputText id="model" label="Model" class="form-control" data-validation="required" required="true" value=" "	requiredMessage="model is Required!"
+												validatorMessage="model be charator">
+												<f:validateLength minimum="3" maximum="20" />
+												<f:validateRegex pattern="^[a-zA-Z]+$" />
+											</p:inputText>
+											&nbsp;
+											<p:message for="model" style="color: red;"></p:message>
+										</div>
+
+
+										<div class="col-sm-3">
+											<div style="overflow: auto; width: 100%; margin-top: 10px;">
+												<h:outputLabel for="manufactureYear">Manufacture Year</h:outputLabel>
+												<span class="text-danger">*</span><span class="text-muted small"></span>
+											</div>
+											<p:inputText id="manufactureYear" label="Manufacture Year" class="form-control" data-validation="required"
+												validatorMessage="chassisNo be charator" required="true" value=" ">
+												<f:validateLength minimum="3" maximum="20" />
+												<f:validateRegex pattern="^[a-zA-Z]+$" />
+											</p:inputText>
+											&nbsp;
+											<p:message for="manufactureYear" style="color: red;"></p:message>
+										</div>
+
+
+										<div class="col-sm-3">
+											<div style="overflow: auto; width: 100%; margin-top: 10px;">
+												<h:outputLabel for="color">Color</h:outputLabel>
+												<span class="text-danger">*</span><span class="text-muted small"></span>
+											</div>
+											<p:inputText id="color" label="Color" class="form-control" data-validation="required" required="true" value=" " requiredMessage="color is Required!"
+												validatorMessage="color be charator">
+												<f:validateLength minimum="3" maximum="20" />
+												<f:validateRegex pattern="^[a-zA-Z]+$" />
+											</p:inputText>
+											&nbsp;
+											<p:message for="color" style="color: red;"></p:message>
+										</div>
+
+
+										<div class="col-sm-3">
+											<div style="overflow: auto; width: 100%; margin-top: 10px;">
+												<h:outputLabel for="chassisNo">Chassis Number</h:outputLabel>
+												<span class="text-danger">*</span><span class="text-muted small"></span>
+											</div>
+											<p:inputText id="chassisNo" label="Chassis Number" class="form-control" data-validation="required"  required="true" value=""
+												requiredMessage="color is Required!"
+												validatorMessage="chassisNo be charator">
+												<f:validateLength minimum="3" maximum="20" />
+												<f:validateRegex pattern="^[a-zA-Z]+$" />
+											</p:inputText>
+											&nbsp;
+											<p:message for="chassisNo" style="color: red;"></p:message>
+										</div>
+
+										<div class="col-sm-3">
+											<div style="overflow: auto; width: 100%; margin-top: 10px;">
+												<h:outputLabel for="currentValue">Current Value</h:outputLabel>
+												<span class="text-danger">*</span><span class="text-muted small"></span>
+											</div>
+											<p:inputText id="currentValue" label="Current Value" class="form-control" data-validation="required"
+												validatorMessage="currentValue be Number" required="true"
+												value=" ">
+												<f:validateLength minimum="3" maximum="20" />
+												<f:validateRegex pattern="^[a-zA-Z]+$" />
+											</p:inputText>
+											&nbsp;
+											<p:message for="currentValue" style="color: red;"></p:message>
+										</div>
+
+										<div class="col-sm-3">
+											<div style="overflow: auto; width: 100%; margin-top: 10px;">
+												<h:outputLabel for="engineCC">Engine CC</h:outputLabel>
+												<span class="text-danger">*</span><span class="text-muted small"></span>
+											</div>
+											<p:inputText id="engineCC" label="Engine CC" class="form-control" data-validation="required"
+												required="true" value=" "
+												requiredMessage="engineCC is Required!"
+												validatorMessage="Invalid engineCC">
+												<f:validateLength minimum="3" maximum="20" />
+												<f:validateRegex pattern="^[a-zA-Z]+$" />
+											</p:inputText>
+											&nbsp;
+											<p:message for="engineCC" style="color: red;"></p:message>
+										</div>
+									
+
+										<div class="col-sm-3">
+											<div style="overflow: auto; width: 100%; margin-top: 10px;">
+												<h:outputLabel for="engineNo">Engine No</h:outputLabel>
+												<span class="text-danger">*</span><span class="text-muted small"></span>
+											</div>
+											<p:inputText id="engineNo" label="Engine No" class="form-control" data-validation="required" required="true" value=" "
+												requiredMessage="engineNo is Required!"
+												validatorMessage="Invalid engineNo">
+												<f:validateLength minimum="3" maximum="20" />
+												<f:validateRegex pattern="^[a-zA-Z]+$" />
+											</p:inputText>
+											&nbsp;
+											<p:message for="engineNo" style="color: red;"></p:message>
+										</div>
+										
+										
+										<div class="col-sm-3">
+											<div style="overflow: auto; width: 100%; margin-top: 10px;">
+												<h:outputLabel for="vehicleRegistrationNumber">Vehicle Registration Number</h:outputLabel>
+												<span class="text-danger">*</span><span class="text-muted small"></span>
+											</div>
+											<p:inputText id="vehicleRegistrationNumber" label="Vehicle Registration Number" class="form-control" data-validation="required" required="true" value=" "
+												requiredMessage="vehicleRegistrationNumber is Required!" validatorMessage="Invalid  Vehicle Registration Number">
+												<f:validateLength minimum="3" maximum="20" />
+												<f:validateRegex pattern="^[a-zA-Z]+$" />
+											</p:inputText>
+											&nbsp;
+											<p:message for="dname" style="color: red;"></p:message>
+										</div>
+										
+										<div class="col-sm-3">
+											<div style="overflow: auto; width: 100%; margin-top: 10px;">
+												<h:outputLabel for="vehicleExpirednNumber">Vehicle Expired Number</h:outputLabel>
+												<span class="text-danger">*</span><span class="text-muted small"></span>
+											</div>
+											<p:inputText id="vehicleExpiredNumber" label="Vehicle Expired Number" class="form-control" data-validation="required" required="true" value=" "
+												requiredMessage="vehicleRegistrationNumber is Required!" validatorMessage="Invalid  Vehicle Registration Number">
+												<f:validateLength minimum="3" maximum="20" />
+												<f:validateRegex pattern="^[a-zA-Z]+$" />
+											</p:inputText>
+											&nbsp;
+											<p:message for="dname" style="color: red;"></p:message>
+										</div>
+										
+
+										<div class="col-sm-3">
+											<div style="overflow: auto; width: 100%; margin-top: 10px;">
+												<h:outputLabel for="make">Make</h:outputLabel>
+												<span class="text-danger">*</span><span class="text-muted small"></span>
+											</div>
+											<h:selectOneMenu id="make" value="" style="width: 100%;"
+												class="form-control">
+												<f:selectItem itemLabel=" " itemValue="" />
+												<f:selectItem itemLabel="Japan" itemValue="Japan" />
+												<f:selectItem itemLabel="Korea" itemValue="Korea" />
+												<f:selectItem itemLabel="India" itemValue="India" />
+												<f:selectItem itemLabel="Germany" itemValue="Germany" />
+											</h:selectOneMenu>
+										</div>
+
+										<div class="col-sm-3">
+											<div style="overflow: auto; width: 100%; margin-top: 10px;">
+												<h:outputLabel for="engineType">Engine Type </h:outputLabel>
+												<span class="text-danger">*</span><span class="text-muted small"></span>
+											</div>
+											<h:selectOneMenu id="engineType" value=""
+												style="width: 100%;" class="form-control">
+												<f:selectItem itemLabel="" itemValue="" />
+												<f:selectItem itemLabel="VEE" itemValue="VEE" />
+												<f:selectItem itemLabel="INLINE" itemValue="INLINE" />
+												<f:selectItem itemLabel="STRAIGHT" itemValue="STRAIGHT" />
+												<f:selectItem itemLabel="VR and W" itemValue="VR and W" />
+												<f:selectItem itemLabel="BOXER" itemValue="BOXER" />
+												<f:selectItem itemLabel="ROTARY" itemValue="ROTARY" />
+											</h:selectOneMenu>
+										</div>
+
+										<div class="col-sm-3">
+											<div style="overflow: auto; width: 100%; margin-top: 10px;">
+												<h:outputLabel for="bodyType">Body Type</h:outputLabel>
+												<span class="text-danger">*</span><span class="text-muted small"></span>
+											</div>
+											<h:selectOneMenu id="bodyType" value="" style="width: 100%;" class="form-control">
+												<f:selectItem itemLabel=" " itemValue=" " />
+												<f:selectItem itemLabel="Hatchback" itemValue="Hatchback" />
+												<f:selectItem itemLabel="Sedon" itemValue="Sedon" />
+												<f:selectItem itemLabel="MUV/SUV" itemValue="MUV/SUV" />
+												<f:selectItem itemLabel="Coupe" itemValue="Coupe" />
+												<f:selectItem itemLabel="Convertible" itemValue="Convertible" />
+												<f:selectItem itemLabel="Wagon" itemValue="Wagon" />
+												<f:selectItem itemLabel="Van" itemValue="Van" />
+												<f:selectItem itemLabel="Jeep" itemValue="Jeep" />
+											</h:selectOneMenu>
+										</div>
+							<!--  		End of Vehicle Detail -->
+										
+							<!--  		Begin of Driver Detail -->	 
+                                     	<div class="col-sm-12">
+											<div style="overflow: auto; width: 100%; margin-top: 10px;">
+												<h3 style="font-size: 18px; font-weight: bold">Driver Details</h3>
+												<hr style="margin: 0px;"></hr>
+											</div>
+										</div>
+
+										<div class="col-sm-3">
+											<div style="overflow: auto; width: 100%; margin-top: 10px;">
+												<h:outputLabel for="dname">Name</h:outputLabel>
+												<span class="text-danger">*</span><span class="text-muted small"></span>
+											</div>
+											<p:inputText id="dname" label="Name" class="form-control" data-validation="required" required="true" value=" "
+												requiredMessage="engineNo is Required!" validatorMessage="Invalid  Name">
+												<f:validateLength minimum="3" maximum="20" />
+												<f:validateRegex pattern="^[a-zA-Z]+$" />
+											</p:inputText>
+											&nbsp;
+											<p:message for="dname" style="color: red;"></p:message>
+										</div>
+
+										<div class="col-sm-3">
+											<div style="overflow: auto; width: 100%; margin-top: 10px;">
+												<h:outputLabel for="daddress">Address</h:outputLabel>
+												<span class="text-danger">*</span><span class="text-muted small"></span>
+											</div>
+											<p:inputText id="daddress" label="Address" class="form-control" data-validation="required"
+												required="true" value=" " requiredMessage="Address is Required!" validatorMessage="Invalid  Address">
+												<f:validateLength minimum="3" maximum="20" />
+												<f:validateRegex pattern="^[a-zA-Z]+$" />
+											</p:inputText>
+											&nbsp;
+											<p:message for="daddress" style="color: red;"></p:message>
+										</div>
+										
+
+										<div class="col-sm-3">
+											<div style="overflow: auto; width: 100%; margin-top: 10px;">
+												<h:outputLabel for="drivingLicence">Driving Licence</h:outputLabel>
+												<span class="text-danger">*</span><span
+													class="text-muted small"></span>
+											</div>
+											<p:inputText id="drivingLicence" label="Driving Lience" class="form-control" data-validation="required"
+												required="true" value=" " requiredMessage="drivingLicence is Required!"	validatorMessage="Invalid  drivingLicence">
+												<f:validateLength minimum="3" maximum="20" />
+												<f:validateRegex pattern="^[a-zA-Z]+$" />
+											</p:inputText>
+											&nbsp;
+											<p:message for="drivingLicence" style="color: red;"></p:message>
+										</div>
+
+										<div class="col-sm-3">
+											<div style="overflow: auto; width: 100%; margin-top: 10px;">
+												<h:outputLabel for="dphoneNo">Phone Number</h:outputLabel>
+												<span class="text-danger">*</span><span class="text-muted small"></span>
+											</div>
+											<p:inputText id="dphoneNo" label="Phone No" class="form-control" data-validation="required"	required="true" value=" "
+												requiredMessage="Phone is Required!"
+												validatorMessage="Invalid  Phone">
+												<f:validateLength minimum="3" maximum="20" />
+												<f:validateRegex pattern="^[a-zA-Z]+$" />
+											</p:inputText>
+											&nbsp;
+											<p:message for="dphoneNo" style="color: red;"></p:message>
+										</div>
+
+										<div class="col-sm-3">
+											<div style="overflow: auto; width: 100%; margin-top: 10px;">
+												<h:outputLabel for="lienceExpiredDate">Lience Expired Date</h:outputLabel>
+												<span class="text-danger">*</span><span class="text-muted small"></span>
+											</div>
+											<p:inputText id="lienceExpiredDate" label="Lience Expired Date" class="form-control" data-validation="required" requiredMessage="Date is Required!"
+												validatorMessage="Invalid Date" required="true" value=" " />
+										</div>
+										<!-- <div class="col-sm-3">
+											<div style="overflow: auto; width: 100%; margin-top: 10px;">
+												<h:outputLabel for="expiredDate">Licence Expired Date</h:outputLabel>
+												<span class="text-danger">*</span><span class="text-muted small"></span>
+											</div>
+											<p:calendar id="expiredDate" value="" locale="en"
+												yearRange="2020:2023" navigator="true" pattern="dd-MMM-yyyy"
+												required="true" requiredMessage="Choose your Register Date!" />
+											&nbsp;
+											<p:message for="date" style="color: red;"></p:message>
+										</div>				 -->				
+							<!--  		End of Driver Detail -->	
+					
+					
+							<!--  		Begin of Beneficial Detail -->	
+										<div class="col-xs-12">
+											<div style="overflow: auto" >
+												<h3 style="font-size: 18px; font-weight: bold; margin-top: 50px;" >Beneficial Details</h3>
+												<hr style="margin: 0px;"></hr>
+											</div>
+										</div>
+
+										<div class="col-sm-3">
+											<div style="overflow: auto; width: 100%; margin-top: 10px;">
+												<h:outputLabel for="bname">Name</h:outputLabel>
+												<span class="text-danger">*</span><span class="text-muted small"></span>
+											</div>
+											<p:inputText id="bname" label="Name" class="form-control" data-validation="required" required="true" value=" "
+												requiredMessage="Phone is Required!" validatorMessage="Invalid  Name">
+												<f:validateLength minimum="3" maximum="20" />
+												<f:validateRegex pattern="^[a-zA-Z]+$" />
+											</p:inputText>
+											&nbsp;
+											<p:message for="bname" style="color: red;"></p:message>
+										</div>
+
+										<div class="col-sm-3">
+											<div style="overflow: auto; width: 100%; margin-top: 10px;">
+												<h:outputLabel for="bnrc">NRC No</h:outputLabel>
+												<span class="text-danger">*</span><span class="text-muted small"></span>
+											</div>
+											<p:inputText id="bnrc" label="nrc" class="form-control" data-validation="required" required="true" value=" "
+												requiredMessage="NRC is Required!" validatorMessage="Invalid  NRC">
+												<f:validateLength minimum="3" maximum="20" />
+												<f:validateRegex pattern="^[a-zA-Z]+$" />
+											</p:inputText>
+											&nbsp;
+											<p:message for="nrc" style="color: red;"></p:message>
+										</div>
+
+										<div class="col-sm-3">
+											<div style="overflow: auto; width: 100%; margin-top: 10px;">
+												<h:outputLabel for="bphoneNo">Phone Number</h:outputLabel>
+												<span class="text-danger">*</span><span class="text-muted small"></span>
+											</div>
+											<p:inputText id="bphoneNo" label="Phone No" class="form-control" data-validation="required"	required="true" value=" ">
+												<f:validateLength minimum="3" maximum="20" />
+												<f:validateRegex pattern="^[a-zA-Z]+$" />
+											</p:inputText>
+											&nbsp;
+											<p:message for="bphoneNo" style="color: red;"></p:message>
+										</div>
+										
+
+										<div class="col-sm-3">
+											<div style="overflow: auto; width: 100%; margin-top: 10px;">
+												<h:outputLabel for="baddress">Address</h:outputLabel>
+												<span class="text-danger">*</span><span class="text-muted small"></span>
+											</div>
+											<p:inputText id="baddress" label="Address" class="form-control" data-validation="required"
+												required="true" value=" " requiredMessage="Address is Required!" validatorMessage="Invalid  Address">
+												<f:validateLength minimum="3" maximum="20" />
+												<f:validateRegex pattern="^[a-zA-Z]+$" />
+											</p:inputText>
+											&nbsp;
+											<p:message for="baddress" style="color: red;"></p:message>
+										</div>
+						<!--  		End of Beneficial Detail -->	
+										<br />
+										<br />
+
+										<div class="col-sm-12">
+											<div class="form-group">
+												<p:commandButton value="Submit" name="submit"
+													class="btn btn-primary" styleClass="ui-priority-primary" />
+											</div>
+										</div>
+		
+
+
+									</h:form>
+								</div>
+								<div class="col-xs-4"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</h:body>
+</html>
